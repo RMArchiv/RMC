@@ -26,6 +26,9 @@ Partial Class frmMain
         lvGames = New ListView()
         ColumnHeader1 = New ColumnHeader()
         ColumnHeader2 = New ColumnHeader()
+        picBack = New PictureBox()
+        lblTitle = New Label()
+        CType(picBack, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' lvGames
@@ -51,18 +54,42 @@ Partial Class frmMain
         ColumnHeader2.Text = "Untertitel"
         ColumnHeader2.Width = 120
         ' 
+        ' picBack
+        ' 
+        picBack.Location = New Point(267, 12)
+        picBack.Name = "picBack"
+        picBack.Size = New Size(843, 144)
+        picBack.SizeMode = PictureBoxSizeMode.AutoSize
+        picBack.TabIndex = 1
+        picBack.TabStop = False
+        ' 
+        ' lblTitle
+        ' 
+        lblTitle.AutoSize = True
+        lblTitle.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point)
+        lblTitle.Location = New Point(282, 26)
+        lblTitle.Name = "lblTitle"
+        lblTitle.Size = New Size(100, 21)
+        lblTitle.TabIndex = 2
+        lblTitle.Text = "GameName"' 
         ' frmMain
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1122, 651)
+        Controls.Add(lblTitle)
+        Controls.Add(picBack)
         Controls.Add(lvGames)
         Name = "frmMain"
         Text = "frmMain"
+        CType(picBack, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
 
     Friend WithEvents lvGames As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents picBack As PictureBox
+    Friend WithEvents lblTitle As Label
 End Class
